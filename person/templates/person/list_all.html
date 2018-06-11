@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% for person in person_list_all %}
+    <h5><a href="{% url 'person_page' person.id %}">{{ person.surname }}</a></h5>
+{% endfor %}
+</body>
+</html>
