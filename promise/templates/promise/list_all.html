@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% for promise in promise_list_all %}
+    <h5><a href="{% url 'promise_page' promise.id %}">{{ promise.title }}</a></h5>
+{% endfor %}
+</body>
+</html>
