@@ -1,9 +1,13 @@
 # -*- coding: utf-8 -*-
 from django.conf.urls import url
+from django.urls import path
+
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.PromiseListView.as_view(), name='promise_list'),
-    url(r'^(?P<pk>\d+)/$', views.PromiseDetailView.as_view(), name='promise_page'),
+    path('', views.PromiseListView.as_view(), name='promise_list'),
+    path('<int:promise_id>/', views.PromiseDetailView.as_view(), name='promise_page'),
+
+    path('search/', views.search, name='search'),
 
 ]
