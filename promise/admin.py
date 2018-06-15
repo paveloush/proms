@@ -17,7 +17,16 @@ from .models import *
 #     inlines = [TagInline, RegionInline, ]
 
 
-admin.site.register( Promise,)
+class PromiseAdmin(admin.ModelAdmin):
+    list_display = ['person', 'title', 'finish_date', 'status', 'vote_up', 'vote_down',]
+    list_filter = ['finish_date', 'status', 'tag']
+    search_fields = ['text']
+
+
+    class Meta():
+        model = Promise
+
+admin.site.register(Promise, PromiseAdmin)
 
 admin.site.register(Status)
 admin.site.register(Region)  # REGION!!

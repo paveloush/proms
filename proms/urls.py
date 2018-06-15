@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from promise.views import home as homepage
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('promise/', include('promise.urls')),
-    path('person/', include('person.urls'))
+    path('person/', include('person.urls')),
+    path('', homepage, name='home'),
 ]
